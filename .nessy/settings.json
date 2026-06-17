@@ -1,0 +1,56 @@
+{
+  "$version": 4,
+  "fastModel": "tgpt/gpt-oss-120b",
+  "mcpServers": {
+    "ui-kit-mcp": {
+      "command": "npx",
+      "args": [
+        "--registry=https://nexus.tcsbank.ru/repository/npm-all/",
+        "@devplatform/react-mcp@latest",
+        "--tui-docs-url",
+        "https://mezinov-test-react-mcp.s3-msk.tinkoff.ru/llms-tui.txt",
+        "--beaver-docs-url",
+        "https://mezinov-test-react-mcp.s3-msk.tinkoff.ru/llms-beaver.txt"
+      ],
+      "autoApprove": [
+        "get-tui-docs-list",
+        "get-tui-docs-item",
+        "get-beaver-docs-list",
+        "get-beaver-docs-item",
+        "get-mcp-overview"
+      ]
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(grep *)",
+      "Skill(grill-me)",
+      "mcp__dpJira__dp_jira_create",
+      "Bash(git checkout *)",
+      "Bash(echo *)",
+      "Bash(pip install *)",
+      "Bash(python3 *)",
+      "Bash(mkdir *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(source *)",
+      "mcp__dpGitlab__dp_gitlab_merge-request",
+      "Bash(git rev-parse *)",
+      "Bash(git *)",
+      "Bash(head *)",
+      "mcp__dpJira__dp_jira_comment",
+      "Bash(find *)",
+      "Read(//Users/v.nosikov/workspace/projects/infra-legacy-projects/**)",
+      "mcp__dpJira__dp_jira_workflow_available",
+      "mcp__dpJira__dp_jira_workflow_move",
+      "Skill(create-and-register-use-case)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "mcp__ui-kit-mcp__get-mcp-overview",
+      "mcp__ui-kit-mcp__get-tui-docs-list",
+      "mcp__ui-kit-mcp__get-tui-docs-item",
+      "Bash(npm run *)"
+    ]
+  }
+}

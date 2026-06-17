@@ -1,0 +1,9 @@
+{
+  "plugins": {
+    "allure": {
+      "version": "1.0.2",
+      "file_path": "plugins/allure",
+      "installed": "2026-06-17T11:41:51.455635+03:00"
+    }
+  }
+}
