@@ -426,19 +426,18 @@ function handleLevelComplete(state: WaterGameState): WaterGameState {
   const newStats = { ...state.statistics };
   const levelStats = getOrCreateLevelStats(newStats, state.currentLevelId!);
 
+  // Check if this is a new record BEFORE updating
+  const isNewMovesRecord = levelStats.bestMoves === null || state.moves < levelStats.bestMoves;
+  const isNewTimeRecord = levelStats.bestTime === null || state.timeElapsed < levelStats.bestTime;
+  const isNewRecord = isNewMovesRecord || isNewTimeRecord;
+
   // Update best moves
-  if (
-    levelStats.bestMoves === null ||
-    state.moves < levelStats.bestMoves
-  ) {
+  if (isNewMovesRecord) {
     levelStats.bestMoves = state.moves;
   }
 
   // Update best time
-  if (
-    levelStats.bestTime === null ||
-    state.timeElapsed < levelStats.bestTime
-  ) {
+  if (isNewTimeRecord) {
     levelStats.bestTime = state.timeElapsed;
   }
 
@@ -469,6 +468,7 @@ function handleLevelComplete(state: WaterGameState): WaterGameState {
     status: 'won',
     statistics: newStats,
     unlockedLevels: newUnlockedLevels,
+    isNewRecord,
   };
 
   // Save progress

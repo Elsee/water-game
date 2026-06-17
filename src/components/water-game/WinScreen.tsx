@@ -15,10 +15,6 @@ export const WinScreen: React.FC = () => {
   const nextLevelId = state.currentLevelId ? getNextLevelId(state.currentLevelId) : null;
   const nextLevel = nextLevelId ? getLevelById(nextLevelId) : null;
 
-  const levelStats = state.currentLevelId ? state.statistics.levels[state.currentLevelId] : null;
-  const isNewRecord =
-    levelStats &&
-    (levelStats.bestMoves === state.moves || levelStats.bestTime === state.timeElapsed);
   const earnedStars = level ? calculateStars(state.moves, level.minMoves) : 0;
 
   // Auto-continue to next level after delay
@@ -107,10 +103,16 @@ export const WinScreen: React.FC = () => {
           {earnedStars === 3 && (
             <p className="text-yellow-400 text-sm mt-2 font-bold">Идеально! 🌟</p>
           )}
+          {earnedStars === 2 && (
+            <p className="text-green-400 text-sm mt-2 font-bold">Отлично! 👍</p>
+          )}
+          {earnedStars === 1 && (
+            <p className="text-blue-400 text-sm mt-2 font-bold">Хорошо! 💪</p>
+          )}
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-800 bg-opacity-50 rounded-lg p-3 text-center">
             <div className="text-xs text-gray-400 uppercase">Ходы</div>
             <div className="text-2xl font-bold text-purple-400">{state.moves}</div>
@@ -121,13 +123,16 @@ export const WinScreen: React.FC = () => {
               {formatTime(state.timeElapsed)}
             </div>
           </div>
-          <div className="bg-gray-800 bg-opacity-50 rounded-lg p-3 text-center">
-            <div className="text-xs text-gray-400 uppercase">Рекорд</div>
-            <div className="text-2xl font-bold text-green-400">
-              {isNewRecord ? 'NEW!' : '✓'}
+        </div>
+
+        {/* New Record Badge */}
+        {state.isNewRecord && (
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-4 mb-6 text-center shadow-lg animate-pulse">
+            <div className="text-white text-sm uppercase tracking-wider font-bold">
+              🎉 Новый рекорд! 🎉
             </div>
           </div>
-        </div>
+        )}
 
         {/* Goal Achieved */}
         <div className="bg-green-900 bg-opacity-30 border border-green-500 rounded-lg p-4 mb-6 text-center">

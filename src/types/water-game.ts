@@ -73,6 +73,7 @@ export interface WaterGameState {
   actionHistory: GameAction[];
   statistics: GameStatistics;
   unlockedLevels: number[];  // IDs of unlocked levels
+  isNewRecord?: boolean;  // Flag set when level is completed with new best moves/time
 }
 
 /**
