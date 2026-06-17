@@ -20,6 +20,11 @@ export function HomePage() {
           description="Base game with canvas and HUD"
           href="/game"
         />
+        <GameCard
+          title="Переливашки"
+          description="Water puzzle game with levels"
+          href="/water-game"
+        />
       </div>
 
       <div className="mt-12 text-sm">

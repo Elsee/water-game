@@ -1,4 +1,5 @@
-import {Route, Switch} from "wouter";
+import {Route, Router, Switch} from 'wouter';
+import {useHashLocation} from 'wouter/use-hash-location';
 import {HomePage} from "./pages/home";
 import {GamePage} from "./pages/game";
 import {CounterPage} from "./pages/counter";
@@ -9,15 +10,17 @@ import {NotFoundPage} from "./pages/404";
 
 function App() {
   return (
-    <div data-tui-theme="dark">
-      <Switch>
-        <Route path="/" component={HomePage} />
-        <Route path="/game" component={GamePage} />
-        <Route path="/counter" component={CounterPage} />
-        <Route path="/water-game" component={WaterGamePage} />
-        <Route path="*" component={NotFoundPage} />
-      </Switch>
-    </div>
+    <Router hook={useHashLocation}>
+      <div data-tui-theme="dark">
+        <Switch>
+          <Route path="/" component={HomePage} />
+          <Route path="/game" component={GamePage} />
+          <Route path="/counter" component={CounterPage} />
+          <Route path="/water-game" component={WaterGamePage} />
+          <Route path="*" component={NotFoundPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

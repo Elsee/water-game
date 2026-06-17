@@ -68,15 +68,15 @@ export const GameHUD: React.FC<GameHUDProps> = ({ onMenuClick }) => {
       {/* Stats Bar */}
       <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
         {/* Moves Counter */}
-        <div className="flex items-center gap-3 bg-gradient-to-br from-purple-900 to-purple-800 px-6 py-3 rounded-xl shadow-lg">
-          <div className="p-2 bg-purple-700 rounded-lg">
+        <div className="flex items-center gap-3 bg-gradient-to-br from-orange-900 to-orange-800 px-6 py-3 rounded-xl shadow-lg">
+          <div className="p-2 bg-orange-700 rounded-lg">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
           </div>
           <div>
-            <div className="text-xs text-purple-300 uppercase tracking-wider">Ходы</div>
-            <div className="text-2xl font-bold text-white">{state.moves}</div>
+            <div className="text-xs text-orange-200 uppercase tracking-wider">Ходы</div>
+            <div className="text-2xl font-bold text-white drop-shadow-lg">{state.moves}</div>
           </div>
         </div>
 
@@ -88,8 +88,8 @@ export const GameHUD: React.FC<GameHUDProps> = ({ onMenuClick }) => {
             </svg>
           </div>
           <div>
-            <div className="text-xs text-blue-300 uppercase tracking-wider">Время</div>
-            <div className="text-2xl font-bold text-white font-mono">
+            <div className="text-xs text-blue-200 uppercase tracking-wider">Время</div>
+            <div className="text-2xl font-bold text-white font-mono drop-shadow-lg">
               {formatTime(state.timeElapsed)}
             </div>
           </div>
@@ -104,8 +104,8 @@ export const GameHUD: React.FC<GameHUDProps> = ({ onMenuClick }) => {
               </svg>
             </div>
             <div>
-              <div className="text-xs text-green-300 uppercase tracking-wider">Цель</div>
-              <div className="text-2xl font-bold text-white">{level.goal} мл</div>
+              <div className="text-xs text-green-200 uppercase tracking-wider">Цель</div>
+              <div className="text-2xl font-bold text-white drop-shadow-lg">{level.goal} мл</div>
             </div>
           </div>
         )}
