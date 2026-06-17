@@ -157,6 +157,27 @@ export function formatTime(seconds: number): string {
 }
 
 /**
+ * Calculate stars based on moves compared to minMoves
+ * 3★ = perfect (minMoves), 2★ = good (+2-3), 1★ = okay (+4-6), 0★ = too many moves
+ */
+export function calculateStars(moves: number, minMoves: number | undefined): number {
+  if (!minMoves || minMoves <= 0) {
+    return 1; // Always at least 1 star for completing
+  }
+
+  if (moves === minMoves) {
+    return 3;
+  }
+  if (moves <= minMoves + 3) {
+    return 2;
+  }
+  if (moves <= minMoves + 6) {
+    return 1;
+  }
+  return 1; // Always at least 1 star for completing the level
+}
+
+/**
  * Get a descriptive text for the current action
  */
 export function getActionDescription(

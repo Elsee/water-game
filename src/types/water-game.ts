@@ -47,6 +47,7 @@ export interface LevelStats {
   completed: boolean;
   bestMoves: number | null;
   bestTime: number | null;  // in seconds
+  bestStars: number | null;  // 0-3 stars based on performance
   attempts: number;
 }
 

@@ -33,7 +33,7 @@ export const LEVELS: Level[] = [
       { capacity: 3, initial: 3, color: NEON_COLORS.green },
     ],
     goal: 4,
-    minMoves: 3,
+    minMoves: 7,
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const LEVELS: Level[] = [
       { capacity: 5, initial: 5, color: NEON_COLORS.purple },
     ],
     goal: 4,
-    minMoves: 4,
+    minMoves: 6,
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export const LEVELS: Level[] = [
       { capacity: 9, initial: 9, color: NEON_COLORS.pink },
     ],
     goal: 6,
-    minMoves: 7,
+    minMoves: 8,
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ export const LEVELS: Level[] = [
       { capacity: 8, initial: 8, color: NEON_COLORS.purple },
     ],
     goal: 4,
-    minMoves: 5,
+    minMoves: 6,
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ export const LEVELS: Level[] = [
       { capacity: 4, initial: 4, color: NEON_COLORS.lime },
     ],
     goal: 3,
-    minMoves: 2,
+    minMoves: 3,
   },
 
   // ==================== MEDIUM LEVELS (6-10) ====================
@@ -92,7 +92,7 @@ export const LEVELS: Level[] = [
       { capacity: 8, initial: 8, color: NEON_COLORS.purple },
     ],
     goal: 4,
-    minMoves: 6,
+    minMoves: 7,
   },
   {
     id: 7,
@@ -104,7 +104,7 @@ export const LEVELS: Level[] = [
       { capacity: 12, initial: 12, color: NEON_COLORS.orange },
     ],
     goal: 6,
-    minMoves: 7,
+    minMoves: 8,
   },
   {
     id: 8,
@@ -116,7 +116,7 @@ export const LEVELS: Level[] = [
       { capacity: 10, initial: 10, color: NEON_COLORS.purple },
     ],
     goal: 5,
-    minMoves: 8,
+    minMoves: 7,
   },
   {
     id: 9,
@@ -142,7 +142,7 @@ export const LEVELS: Level[] = [
       { capacity: 15, initial: 15, color: NEON_COLORS.yellow },
     ],
     goal: 8,
-    minMoves: 10,
+    minMoves: 9,
   },
 
   // ==================== HARD LEVELS (11-15) ====================
@@ -157,7 +157,7 @@ export const LEVELS: Level[] = [
       { capacity: 15, initial: 15, color: NEON_COLORS.pink },
     ],
     goal: 7,
-    minMoves: 11,
+    minMoves: 10,
   },
   {
     id: 12,
@@ -170,7 +170,7 @@ export const LEVELS: Level[] = [
       { capacity: 12, initial: 12, color: NEON_COLORS.yellow },
     ],
     goal: 7,
-    minMoves: 12,
+    minMoves: 11,
   },
   {
     id: 13,
@@ -184,7 +184,7 @@ export const LEVELS: Level[] = [
       { capacity: 20, initial: 20, color: NEON_COLORS.orange },
     ],
     goal: 13,
-    minMoves: 14,
+    minMoves: 12,
   },
   {
     id: 14,
@@ -198,7 +198,7 @@ export const LEVELS: Level[] = [
       { capacity: 18, initial: 18, color: NEON_COLORS.yellow },
     ],
     goal: 10,
-    minMoves: 15,
+    minMoves: 13,
   },
   {
     id: 15,
@@ -213,7 +213,7 @@ export const LEVELS: Level[] = [
       { capacity: 25, initial: 25, color: NEON_COLORS.lime },
     ],
     goal: 14,
-    minMoves: 18,
+    minMoves: 16,
   },
 ];
 

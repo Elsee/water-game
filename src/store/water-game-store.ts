@@ -20,6 +20,7 @@ import {
   pourVessels,
   checkWinCondition,
   createAction,
+  calculateStars,
 } from '../engine/water-game-logic';
 import { getLevelById, getNextLevelId, LEVELS } from '../game/water-levels';
 
@@ -121,6 +122,7 @@ function getOrCreateLevelStats(
       completed: false,
       bestMoves: null,
       bestTime: null,
+      bestStars: null,
       attempts: 0,
     };
   }
@@ -438,6 +440,15 @@ function handleLevelComplete(state: WaterGameState): WaterGameState {
     state.timeElapsed < levelStats.bestTime
   ) {
     levelStats.bestTime = state.timeElapsed;
+  }
+
+  // Calculate and update best stars
+  const earnedStars = calculateStars(state.moves, level.minMoves);
+  if (
+    levelStats.bestStars === null ||
+    earnedStars > levelStats.bestStars
+  ) {
+    levelStats.bestStars = earnedStars;
   }
 
   levelStats.completed = true;
