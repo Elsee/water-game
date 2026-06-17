@@ -8,6 +8,7 @@ import { useSelector } from '@tanstack/react-store';
 import { waterGameStore, waterGameActions } from '../../store/water-game-store';
 import { VesselComponent } from './Vessel';
 import { getLevelById } from '../../game/water-levels';
+import { sounds } from '../../utils/sounds';
 
 export const GameBoard: React.FC = () => {
   const state = useSelector(waterGameStore, (s) => s);
@@ -17,12 +18,15 @@ export const GameBoard: React.FC = () => {
     if (state.selectedVesselId === null) {
       // First click - select source vessel
       waterGameActions.selectVessel(vesselId);
+      sounds.playClick();
     } else if (state.selectedVesselId === vesselId) {
       // Clicking same vessel - deselect
       waterGameActions.cancelSelection();
+      sounds.playClick();
     } else {
       // Second click on different vessel - pour
       waterGameActions.pourVessels(state.selectedVesselId, vesselId);
+      sounds.playPour();
     }
   };
 

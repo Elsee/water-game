@@ -8,6 +8,7 @@ import { useSelector } from '@tanstack/react-store';
 import { waterGameStore, waterGameActions } from '../../store/water-game-store';
 import { getLevelById, getNextLevelId } from '../../game/water-levels';
 import { formatTime, calculateStars } from '../../engine/water-game-logic';
+import { sounds } from '../../utils/sounds';
 
 export const WinScreen: React.FC = () => {
   const state = useSelector(waterGameStore, (s) => s);
@@ -16,6 +17,11 @@ export const WinScreen: React.FC = () => {
   const nextLevel = nextLevelId ? getLevelById(nextLevelId) : null;
 
   const earnedStars = level ? calculateStars(state.moves, level.minMoves) : 0;
+
+  // Play success sound when win screen appears
+  useEffect(() => {
+    sounds.playSuccess();
+  }, []);
 
   // Auto-continue to next level after delay
   useEffect(() => {
