@@ -10,16 +10,14 @@
 
 import type { Level } from '../types/water-game';
 
-// Neon color palette for water
-const NEON_COLORS = {
-  blue: '#00f5ff',
-  green: '#00ff88',
-  purple: '#bb00ff',
-  pink: '#ff0080',
-  orange: '#ff8800',
-  yellow: '#ffff00',
-  cyan: '#00ffff',
-  lime: '#ccff00',
+// Classic water color palette
+const WATER_COLORS = {
+  lightBlue: '#4FC3F7',    // Голубой - лёгкий уровень
+  blue: '#2196F3',         // Синий - средний уровень
+  deepBlue: '#1976D2',     // Глубокий синий - сложный уровень
+  cyan: '#26C6DA',         // Бирюзовый - акцент
+  green: '#4CAF50',        // Зелёный - для разнообразия
+  purple: '#9C27B0',       // Фиолетовый - редкие уровни
 } as const;
 
 export const LEVELS: Level[] = [
@@ -29,8 +27,8 @@ export const LEVELS: Level[] = [
     name: 'Первый шаг',
     category: 'easy',
     vessels: [
-      { capacity: 5, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 3, initial: 3, color: NEON_COLORS.green },
+      { capacity: 5, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 3, initial: 3, color: WATER_COLORS.green },
     ],
     goal: 4,
     minMoves: 7,
@@ -40,8 +38,8 @@ export const LEVELS: Level[] = [
     name: 'Начинающий',
     category: 'easy',
     vessels: [
-      { capacity: 8, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 5, initial: 5, color: NEON_COLORS.purple },
+      { capacity: 8, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 5, initial: 5, color: WATER_COLORS.purple },
     ],
     goal: 4,
     minMoves: 9,
@@ -51,8 +49,8 @@ export const LEVELS: Level[] = [
     name: 'Точный расчёт',
     category: 'easy',
     vessels: [
-      { capacity: 4, initial: 0, color: NEON_COLORS.cyan },
-      { capacity: 9, initial: 9, color: NEON_COLORS.pink },
+      { capacity: 4, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 9, initial: 9, color: WATER_COLORS.blue },
     ],
     goal: 6,
     minMoves: 7,
@@ -62,9 +60,9 @@ export const LEVELS: Level[] = [
     name: 'Три сосуда',
     category: 'easy',
     vessels: [
-      { capacity: 3, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 5, initial: 0, color: NEON_COLORS.green },
-      { capacity: 8, initial: 8, color: NEON_COLORS.purple },
+      { capacity: 3, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 5, initial: 0, color: WATER_COLORS.green },
+      { capacity: 8, initial: 8, color: WATER_COLORS.blue },
     ],
     goal: 4,
     minMoves: 6,
@@ -74,8 +72,8 @@ export const LEVELS: Level[] = [
     name: 'Разминка',
     category: 'easy',
     vessels: [
-      { capacity: 7, initial: 0, color: NEON_COLORS.orange },
-      { capacity: 4, initial: 4, color: NEON_COLORS.lime },
+      { capacity: 7, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 4, initial: 4, color: WATER_COLORS.green },
     ],
     goal: 3,
     minMoves: 3,
@@ -87,9 +85,9 @@ export const LEVELS: Level[] = [
     name: 'Средний уровень',
     category: 'medium',
     vessels: [
-      { capacity: 3, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 5, initial: 0, color: NEON_COLORS.green },
-      { capacity: 8, initial: 8, color: NEON_COLORS.purple },
+      { capacity: 3, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 5, initial: 0, color: WATER_COLORS.green },
+      { capacity: 8, initial: 8, color: WATER_COLORS.blue },
     ],
     goal: 4,
     minMoves: 6,
@@ -99,9 +97,9 @@ export const LEVELS: Level[] = [
     name: 'Баланс',
     category: 'medium',
     vessels: [
-      { capacity: 5, initial: 0, color: NEON_COLORS.cyan },
-      { capacity: 8, initial: 0, color: NEON_COLORS.pink },
-      { capacity: 12, initial: 12, color: NEON_COLORS.orange },
+      { capacity: 5, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 8, initial: 0, color: WATER_COLORS.purple },
+      { capacity: 12, initial: 12, color: WATER_COLORS.deepBlue },
     ],
     goal: 6,
     minMoves: 6,
@@ -111,9 +109,9 @@ export const LEVELS: Level[] = [
     name: 'Комбинация',
     category: 'medium',
     vessels: [
-      { capacity: 4, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 7, initial: 0, color: NEON_COLORS.green },
-      { capacity: 10, initial: 10, color: NEON_COLORS.purple },
+      { capacity: 4, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 7, initial: 0, color: WATER_COLORS.green },
+      { capacity: 10, initial: 10, color: WATER_COLORS.blue },
     ],
     goal: 5,
     minMoves: 6,
@@ -123,10 +121,10 @@ export const LEVELS: Level[] = [
     name: 'Переливашки',
     category: 'medium',
     vessels: [
-      { capacity: 3, initial: 3, color: NEON_COLORS.lime },
-      { capacity: 5, initial: 0, color: NEON_COLORS.cyan },
-      { capacity: 8, initial: 0, color: NEON_COLORS.pink },
-      { capacity: 10, initial: 10, color: NEON_COLORS.orange },
+      { capacity: 3, initial: 3, color: WATER_COLORS.green },
+      { capacity: 5, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 8, initial: 0, color: WATER_COLORS.purple },
+      { capacity: 10, initial: 10, color: WATER_COLORS.deepBlue },
     ],
     goal: 6,
     minMoves: 3,
@@ -136,9 +134,9 @@ export const LEVELS: Level[] = [
     name: 'Продвинутый',
     category: 'medium',
     vessels: [
-      { capacity: 7, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 13, initial: 0, color: NEON_COLORS.green },
-      { capacity: 20, initial: 20, color: NEON_COLORS.purple },
+      { capacity: 7, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 13, initial: 0, color: WATER_COLORS.green },
+      { capacity: 20, initial: 20, color: WATER_COLORS.blue },
     ],
     goal: 11,
     minMoves: 12,
@@ -150,9 +148,9 @@ export const LEVELS: Level[] = [
     name: 'Виртуоз',
     category: 'hard',
     vessels: [
-      { capacity: 9, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 14, initial: 0, color: NEON_COLORS.green },
-      { capacity: 22, initial: 22, color: NEON_COLORS.purple },
+      { capacity: 9, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 14, initial: 0, color: WATER_COLORS.green },
+      { capacity: 22, initial: 22, color: WATER_COLORS.deepBlue },
     ],
     goal: 11,
     minMoves: 8,
@@ -162,9 +160,9 @@ export const LEVELS: Level[] = [
     name: 'Эксперт',
     category: 'hard',
     vessels: [
-      { capacity: 8, initial: 0, color: NEON_COLORS.cyan },
-      { capacity: 15, initial: 0, color: NEON_COLORS.lime },
-      { capacity: 23, initial: 23, color: NEON_COLORS.orange },
+      { capacity: 8, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 15, initial: 0, color: WATER_COLORS.green },
+      { capacity: 23, initial: 23, color: WATER_COLORS.blue },
     ],
     goal: 12,
     minMoves: 18,
@@ -174,9 +172,9 @@ export const LEVELS: Level[] = [
     name: 'Профессионал',
     category: 'hard',
     vessels: [
-      { capacity: 9, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 16, initial: 0, color: NEON_COLORS.green },
-      { capacity: 25, initial: 25, color: NEON_COLORS.purple },
+      { capacity: 9, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 16, initial: 0, color: WATER_COLORS.green },
+      { capacity: 25, initial: 25, color: WATER_COLORS.deepBlue },
     ],
     goal: 13,
     minMoves: 13,
@@ -186,9 +184,9 @@ export const LEVELS: Level[] = [
     name: 'Гроссмейстер',
     category: 'hard',
     vessels: [
-      { capacity: 10, initial: 0, color: NEON_COLORS.cyan },
-      { capacity: 17, initial: 0, color: NEON_COLORS.lime },
-      { capacity: 27, initial: 27, color: NEON_COLORS.orange },
+      { capacity: 10, initial: 0, color: WATER_COLORS.cyan },
+      { capacity: 17, initial: 0, color: WATER_COLORS.green },
+      { capacity: 27, initial: 27, color: WATER_COLORS.blue },
     ],
     goal: 19,
     minMoves: 19,
@@ -198,9 +196,9 @@ export const LEVELS: Level[] = [
     name: 'Легенда',
     category: 'hard',
     vessels: [
-      { capacity: 13, initial: 0, color: NEON_COLORS.blue },
-      { capacity: 21, initial: 0, color: NEON_COLORS.green },
-      { capacity: 34, initial: 34, color: NEON_COLORS.lime },
+      { capacity: 13, initial: 0, color: WATER_COLORS.lightBlue },
+      { capacity: 21, initial: 0, color: WATER_COLORS.green },
+      { capacity: 34, initial: 34, color: WATER_COLORS.deepBlue },
     ],
     goal: 23,
     minMoves: 13,
